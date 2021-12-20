@@ -6,8 +6,8 @@ end)
 AddEventHandler('playerDropped', function(reason) 
 	local src = source
 	print("Poistui: "..GetPlayerName(src))
-	TriggerEvent("logs:server:CreateLog", "joinleave", "Dropped", "red", "**".. GetPlayerName(src) .. "** ("..GetPlayerIdentifiers(src)[1]..") left..")
-	TriggerEvent("logs:server:sendLog", GetPlayerIdentifiers(src)[1], "joined", {})
+	TriggerEvent("qb-logs:server:CreateLog", "joinleave", "Dropped", "red", "**".. GetPlayerName(src) .. "** ("..GetPlayerIdentifiers(src)[1]..") left..")
+	TriggerEvent("qb-logs:server:sendLog", GetPlayerIdentifiers(src)[1], "joined", {})
 	if reason ~= "Reconnecting" and src > 60000 then return false end
 	if(src==nil or (QBCore.Players[src] == nil)) then return false end
 	QBCore.Players[src].Functions.Save()

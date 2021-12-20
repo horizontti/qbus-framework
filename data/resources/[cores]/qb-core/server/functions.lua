@@ -3,7 +3,7 @@ QBCore.Functions = {}
 QBCore.Functions.ExecuteSql = function(wait, query, cb)
 	local rtndata = {}
 	local waiting = true
-	exports['revosql']:execute(query, {}, function(data)
+	exports['ghmattimysql']:execute(query, {}, function(data)
 		if cb ~= nil and wait == false then
 			cb(data)
 		end

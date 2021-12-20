@@ -66,8 +66,8 @@ AddEventHandler('playerConnecting', function(playerName, setKickReason, deferral
         CancelEvent()
         return false
 	end
-	TriggerEvent("logs:server:CreateLog", "joinleave", "Queue", "orange", "**"..name .. "** ("..json.encode(GetPlayerIdentifiers(src))..") in queue..")
-	TriggerEvent("logs:server:sendLog", GetPlayerIdentifiers(src)[1], "left", {})
+	TriggerEvent("qb-logs:server:CreateLog", "joinleave", "Queue", "orange", "**"..name .. "** ("..json.encode(GetPlayerIdentifiers(src))..") in queue..")
+	TriggerEvent("qb-logs:server:sendLog", GetPlayerIdentifiers(src)[1], "left", {})
 	TriggerEvent("connectqueue:playerConnect", src, setKickReason, deferrals)
 end)
 

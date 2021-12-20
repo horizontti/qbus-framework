@@ -148,7 +148,7 @@ QBCore.Commands.Add("ooc", "Message Out Of Character", {}, false, function(sourc
 		if QBCore.Functions.HasPermission(v, "admin") then
 			if QBCore.Functions.IsOptin(v) then
 				TriggerClientEvent('chatMessage', v, "OOC " .. GetPlayerName(source), "normal", message)
-				TriggerEvent("logs:server:CreateLog", "ooc", "OOC", "white", "**"..GetPlayerName(source).."** (CitizenID: "..Player.PlayerData.citizenid.." | ID: "..source..") **Message:** " ..message, false)
+				TriggerEvent("qb-logs:server:CreateLog", "ooc", "OOC", "white", "**"..GetPlayerName(source).."** (CitizenID: "..Player.PlayerData.citizenid.." | ID: "..source..") **Message:** " ..message, false)
 			end
 		end
 	end
